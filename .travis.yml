@@ -5,7 +5,10 @@ git:
 language: python
 cache: pip # Guardando em cache os pacotes baixados pelo pip
 jobs:
+  allow_failures:
+    - python: 3.8-dev # Permite que a tarefa falhe na versão do python 3.8-dev
   include:
+    - stage: "Testando versões do Python em distribuições Linux/Ubuntu"
     - name: "Testando Python 3.8.0 no Ubuntu Xenial"
       python: 3.8
 
