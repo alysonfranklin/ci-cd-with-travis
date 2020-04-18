@@ -26,6 +26,11 @@ jobs:
       python: 3.8-dev
       script:
         - exit 1
+
+    - name: "Testando Python 3.8-dev no Ubuntu bionic"
+      python: 3.8-dev
+      script:
+        - exit 1
       
     - stage: "Testando em outras plataformas"
       name: "Testando Python 3.7.4 no MacOS"
