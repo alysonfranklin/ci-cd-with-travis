@@ -8,7 +8,7 @@ jobs:
   allow_failures:
     - python: 3.8-dev # Permite que a tarefa falhe na versão do python 3.8-dev
   include:
-    - stage: "Testando versões do Python em distribuições Linux/Ubuntu"
+    - stage: "Testando versoes do Python em distribuicoes Linux/Ubuntu"
     - name: "Testando Python 3.8.0 no Ubuntu Xenial"
       python: 3.8
 
