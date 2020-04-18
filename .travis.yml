@@ -29,6 +29,7 @@ jobs:
 
     - name: "Testando Python 3.8-dev no Ubuntu bionic"
       python: 3.8-dev
+      dist: bionic
       script:
         - exit 1
       
