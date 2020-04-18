@@ -5,6 +5,8 @@ git:
 language: python
 cache: pip # Guardando em cache os pacotes baixados pelo pip
 jobs:
+  allow_failures:
+    - python: 3.8-dev
   include:
     - name: "Testando Python 3.8.0 no Ubuntu Xenial"
       python: 3.8
@@ -22,8 +24,11 @@ jobs:
 
     - name: "Testando Python 3.8-dev no Ubuntu Xenial"
       python: 3.8-dev
-
-    - name: "Testando Python 3.7.4 no MacOS"
+      script:
+        - exit 1
+      
+    - stage: "Testando em outras plataformas"
+      name: "Testando Python 3.7.4 no MacOS"
       os: osx
       osx_image: xcode11.2
       language: shell
@@ -36,9 +41,13 @@ jobs:
         - python -m pip install --upgrade pip
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
 
-  allow_failures:
-    - python: 3.8-dev
-    - python: 3.7.4
+    - stage: deploy
+      if: (branch = develop) AND (type = push) # Execute o deploy se e somente se a branch for develop 
+      os: linux
+      dist: xenial
+      python: 3.8
+      script:
+        - echo "Deploy (for now)"
 
 install:
   - pip3 install --upgrade pip
