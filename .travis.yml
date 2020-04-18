@@ -26,13 +26,13 @@ jobs:
     - name: "Testando Python 3.8-dev no Ubuntu Xenial"
       python: 3.8-dev
       script:
-        - exit 1
+        - exit 1 # Forcei esta saída de erro
 
     - name: "Testando Python 3.8-dev no Ubuntu bionic"
       python: 3.8-dev
       dist: bionic
       script:
-        - exit 1
+        - exit 1 # Forcei esta saída de erro
       
     - stage: "Testando em outras plataformas"
       name: "Testando Python 3.7.4 no MacOS"
