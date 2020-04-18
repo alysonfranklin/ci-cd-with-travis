@@ -5,8 +5,6 @@ git:
 language: python
 cache: pip # Guardando em cache os pacotes baixados pelo pip
 jobs:
-  allow_failures:
-    - python: 3.8-dev
   include:
     - name: "Testando Python 3.8.0 no Ubuntu Xenial"
       python: 3.8
