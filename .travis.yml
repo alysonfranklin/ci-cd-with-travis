@@ -2,6 +2,12 @@ git:
   submodules: false # Não acompanhe os submodulos - No nosso caso não temos submodulos
   quiet: true # Faça sileciosamente para não produzir de maneira detalhada
   depth: 3 # Quando fizer o checkout, use uma profundidade de clonagem de 3. Obtenha as últimas confirmações
+
+notifications:
+  slack:
+    rooms:
+	  - grupo-box:$SLACK_TOKEN#deploys
+
 language: python
 cache: pip # Guardando em cache os pacotes baixados pelo pip
 jobs:
